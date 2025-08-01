@@ -16,6 +16,22 @@ function converterMaiuscula() {
         .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
         .join(' ');
     }
+    function maiusculaAposPonto() {
+      let texto = document.getElementById("texto").value;
+
+      // Deixa tudo em minúsculo primeiro
+      texto = texto.toLowerCase();
+
+      // Coloca a primeira letra do texto em maiúscula
+      texto = texto.charAt(0).toUpperCase() + texto.slice(1);
+
+      // Transforma a primeira letra após ponto, interrogação ou exclamação em maiúscula
+      texto = texto.replace(/([\.!?]\s*)(\w)/g, (match, pontuacao, letra) => {
+        return pontuacao + letra.toUpperCase();
+    });
+
+    document.getElementById("texto").value = texto;
+    }
 
 $(document).ready(function(){
     $(window).scroll(function(){
