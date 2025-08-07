@@ -93,70 +93,84 @@ button:active{
     color: rgb(255, 255, 255);
     background: rgb(136, 136, 136);
 }
-
-/* tablet */
-@media (max-width: 801px){
-    h1{
-        font-size: 55px;
-    }
-    #calculadora{
-        width: 475px;
-    }
-    #visor{
-        margin-top: 20px;
-        width: 430px;
-        height: 90px;
-        font-size: 95px;
-    }
-    #painel{
-        width: 335px;
-    }
-    .buttonArea{
-        display: grid;
-        grid-template-columns: repeat(4, 95px);
-        grid-template-rows: repeat(5, 95px);
-        grid-gap: 20px;
-        padding: 15px;
-    }
-    button{
-        font-size: 30px;
-    }
+/*Fim*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    text-decoration: none;
 }
 
-/* mobile */
-@media (max-width: 600px){
-    body{
-        background-size: 150%;
-    }
-    h1{
-        font-size: 40px;
-    }
-    #calculadora{
-        width: 300px;
-    }
-    #visor{
-        font-size: 65px;
-        width: 250px;
-        height: 60px;
-    }
-    #painel{
-        width: 195px;
-    }
-    .buttonArea{
-        display: grid;
-        grid-template-columns: repeat(4, 60px);
-        grid-template-rows: repeat(5, 60px);
-        grid-gap: 10px;
-        padding: 15px;
-    }
-    button{
-        font-size: 25px;
-    }
+html {
+    scroll-behavior: smooth;
 }
+
+
 
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 /*Inicio*/
+
+.container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 850px;
+      text-align: center;
+    }
+
+    .about,
+.services,
+.skills,
+.teams,
+.contact,
+footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+section .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #ff0303;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
 
     .container {
       background: white;
@@ -191,6 +205,7 @@ button:active{
     padding: 0 80px;
     margin: auto;
 }
+
 /* navbar styling */
 .navbar {
     position: fixed;
@@ -249,6 +264,7 @@ button:active{
     color: #fff;
 }
 
+
 /* menu btn styling */
 .menu-btn {
     color: #fff;
@@ -286,6 +302,7 @@ button:active{
 .scroll-up-btn:hover {
     filter: brightness(90%);
 }
+
 /* footer section styling */
 footer {
     background: #111;
@@ -302,3 +319,197 @@ footer span a {
 footer span a:hover {
     text-decoration: underline;
 }
+
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* about section styling */
+.about {
+    display: flex;
+    background-color: #461414;
+    height: 100vh;
+    color: #fff;
+}
+
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .left img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right .text span {
+    color: #b74040;
+}
+
+.about .about-content .right p {
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    display: inline-block;
+    background: #b74040;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #b74040;
+    transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+    color: #b74040;
+    background: none;
+}
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img {
+        height: 110px;
+        width: 110px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active {
+        left: 0;
+    }
+
+    .navbar .menu li {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
+    .home .home-content .text-2 {
+        font-size: 70px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 35px;
+    }
+
+    .home .home-content a {
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+
+    .max-width {
+        max-width: 930px;
+    }
+
+    .about .about-content .column {
+        width: 100%;
+    }
+
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+
+    .about .about-content .right {
+        flex: 100%;
+    }
+
+
+}
+
+@media (max-width: 690px) {
+    .max-width {
+        padding: 0 23px;
+    }
+
+    .home .home-content .text-2 {
+        font-size: 60px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 32px;
+    }
+
+    .home .home-content a {
+        font-size: 20px;
+    }
+
+   
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2 {
+        font-size: 50px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 27px;
+    }
+
+    .right form .error-box {
+        width: 150px;
+    }
+
+    .scroll-up-btn {
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
