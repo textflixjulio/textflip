@@ -1,0 +1,304 @@
+@font-face {
+    font-family: calculadora;
+    src: url(./fonte/digital-7\ \(mono\ italic\).ttf);
+}
+body{
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #461414;
+}
+h1{
+    font-family: 'Raleway', cursive;
+    text-transform: uppercase;
+    color: rgb(3, 121, 105);
+    background-color: #cbfce5ce;
+    text-shadow: #fff 0 0 10px;
+    padding: 13px;
+    border-bottom: 2px solid rgb(172, 172, 171);
+    box-shadow: 0 5px 5px rgb(172, 172, 171);
+}
+
+#visor{
+    font-family: calculadora;
+    font-size: 35px;
+    width: 165px;
+    height: 35px;
+    display: grid;
+    grid-template-columns: 20% 85%;
+    margin: 10px auto;
+    padding: 7px;
+    background:linear-gradient(rgb(80, 235, 126), rgb(240, 136, 253));
+    border: 2px solid rgb(235, 234, 234) ;
+    border-radius: 3px;
+    box-shadow: -1px -1px 0 1px white;
+    
+}
+#dots{
+    display: none;
+}
+#painel{
+    width: 135px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#calculadora{
+    width: 202px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(54, 54, 54);
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(179, 177, 177) ;
+    box-shadow: 5px 8px 5px rgb(172, 172, 171);
+}
+#dots:hover{
+    display: none;
+    position: relative;
+}
+#painel:hover{
+    overflow: visible;
+    position: absolute;
+}
+.buttonArea{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 40px);
+    grid-template-rows: repeat(5, 40px);
+    grid-gap: 5px;
+    padding: 15px;
+}
+button{
+    font-size: 17px;
+}
+button:active{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+}
+.botao:nth-last-child(2){
+    grid-column: 4;
+    grid-row: 4 / 6;
+    border: 1px solid rgb(179, 177, 177) ;
+    box-shadow: -1px -1px 2px 1px rgb(238, 237, 237);
+    background: rgb(0, 255, 115);
+}
+.botao:nth-last-child(3){
+    grid-column: span 2;
+    border: 1px solid rgb(179, 177, 177) ;
+    box-shadow: -1px -1px 2px 1px rgb(238, 237, 237);
+    background: rgb(0, 255, 128);
+}
+.botao:nth-last-child(2):active, .botao:nth-last-child(3):active{
+    color: rgb(255, 255, 255);
+    background: rgb(136, 136, 136);
+}
+
+/* tablet */
+@media (max-width: 801px){
+    h1{
+        font-size: 55px;
+    }
+    #calculadora{
+        width: 475px;
+    }
+    #visor{
+        margin-top: 20px;
+        width: 430px;
+        height: 90px;
+        font-size: 95px;
+    }
+    #painel{
+        width: 335px;
+    }
+    .buttonArea{
+        display: grid;
+        grid-template-columns: repeat(4, 95px);
+        grid-template-rows: repeat(5, 95px);
+        grid-gap: 20px;
+        padding: 15px;
+    }
+    button{
+        font-size: 30px;
+    }
+}
+
+/* mobile */
+@media (max-width: 600px){
+    body{
+        background-size: 150%;
+    }
+    h1{
+        font-size: 40px;
+    }
+    #calculadora{
+        width: 300px;
+    }
+    #visor{
+        font-size: 65px;
+        width: 250px;
+        height: 60px;
+    }
+    #painel{
+        width: 195px;
+    }
+    .buttonArea{
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(5, 60px);
+        grid-gap: 10px;
+        padding: 15px;
+    }
+    button{
+        font-size: 25px;
+    }
+}
+
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+/*Inicio*/
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 850px;
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 50px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      resize: none;
+    }
+    section {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+/* navbar styling */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 15px 0;
+    background: #b74040;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar .logo a span {
+    color: #b74040;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky .logo a span {
+    color: #fff;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: #b74040;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #ff0303;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+    filter: brightness(90%);
+}
+/* footer section styling */
+footer {
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+
+footer span a {
+    color: #b74040;
+    text-decoration: none;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
